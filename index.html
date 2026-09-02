@@ -3,232 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Viver Bem - Como Ajudar Idosos</title>
-    <style>
-        /* --- ESTILOS CSS --- */
-        :root {
-            --cor-primaria: #0056b3;
-            --cor-secundaria: #f8f9fa;
-            --cor-texto: #212529;
-            --cor-destaque: #e67e22;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            font-size: 19px; /* Fonte maior por padrão para facilitar a leitura */
-            line-height: 1.6;
-            color: var(--cor-texto);
-            background-color: var(--cor-secundaria);
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: var(--cor-primaria);
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.2rem;
-        }
-
-        /* Controles de Acessibilidade */
-        .controles-acessibilidade {
-            background-color: #e9ecef;
-            padding: 10px;
-            text-align: center;
-            border-bottom: 2px solid #dee2e6;
-        }
-
-        .btn-acessibilidade {
-            font-size: 1rem;
-            padding: 10px 20px;
-            margin: 5px;
-            cursor: pointer;
-            border: 2px solid var(--cor-primaria);
-            background-color: white;
-            color: var(--cor-primaria);
-            font-weight: bold;
-            border-radius: 5px;
-        }
-
-        .btn-acessibilidade:hover {
-            background-color: var(--cor-primaria);
-            color: white;
-        }
-
-        main {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .secao-dicas {
-            margin-bottom: 40px;
-        }
-
-        .card-dica {
-            background-color: #fdfefe;
-            border-left: 5px solid var(--cor-destaque);
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 0 5px 5px 0;
-        }
-
-        .card-dica h3 {
-            margin-top: 0;
-            color: var(--cor-primaria);
-        }
-
-        /* Formulário Simples */
-        .formulario-contato {
-            background-color: #f1f3f5;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 30px;
-        }
-
-        .grupo-campo {
-            margin-bottom: 15px;
-        }
-
-        .grupo-campo label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        .grupo-campo input, .grupo-campo textarea {
-            width: 100%;
-            padding: 10px;
-            font-size: 1.1rem;
-            border: 2px solid #ced4da;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        .btn-enviar {
-            background-color: var(--cor-destaque);
-            color: white;
-            padding: 12px 25px;
-            font-size: 1.2rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            width: 100%;
-        }
-
-        .btn-enviar:hover {
-            background-color: #d35400;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: var(--cor-primaria);
-            color: white;
-            margin-top: 40px;
-        }
-    </style>
+    <title>Gerações Unidas | Apoio e Cuidado ao Idoso</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Cabeçalho Principal -->
-    <header>
-        <h1>Portal Viver Bem</h1>
-        <p>Aprenda a apoiar e cuidar dos nossos idosos com dignidade e carinho</p>
-    </header>
-
-    <!-- Barra de Acessibilidade -->
-    <div class="controles-acessibilidade">
-        <button class="btn-acessibilidade" onclick="alterarFonte(2)">A+ Aumentar Texto</button>
-        <button class="btn-acessibilidade" onclick="alterarFonte(-2)">A- Diminuir Texto</button>
+    <!-- BARRA DE ACESSIBILIDADE FIXA -->
+    <div class="barra-acessibilidade" role="complementary" aria-label="Ferramentas de acessibilidade">
+        <div class="container-acessibilidade">
+            <button onclick="alterarFonte(2)" aria-label="Aumentar texto">A+ Aumentar Texto</button>
+            <button onclick="alterarFonte(-2)" aria-label="Diminuir texto">A- Diminuir Texto</button>
+            <button onclick="alternarContraste()" id="btn-contraste" aria-label="Alternar alto contraste">🌓 Alto Contraste</button>
+        </div>
     </div>
 
-    <!-- Conteúdo Principal -->
-    <main id="conteudo-principal">
+    <!-- CABEÇALHO -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <h2>🤍 Gerações<span>Unidas</span></h2>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#dicas">Guia de Ajuda</a></li>
+                    <li><a href="#comunidade">Mural da Comunidade</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION (BOAS-VINDAS) -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Cuidar de quem já cuidou de nós é um ato de amor.</h1>
+            <p>Descubra pequenas atitudes e adaptações que transformam o cotidiano, trazendo autonomia, segurança e alegria para a terceira idade.</p>
+            <a href="#dicas" class="btn-primary">Começar a Aprender</a>
+        </div>
+    </section>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-content" id="conteudo-acessivel">
         
-        <section class="secao-dicas">
-            <h2>Dicas Práticas de Como Ajudar</h2>
-            <p>Pequenas ações no dia a dia fazem uma grande diferença na qualidade de vida e na inclusão da terceira idade.</p>
-
-            <div class="card-dica">
-                <h3>1. Inclusão Digital</h3>
-                <p>Ensine o uso de tecnologias e smartphones de forma paciente. Configure letras maiores e use exemplos práticos do cotidiano do idoso.</p>
+        <!-- SEÇÃO DE DICAS COM ABAS DINÂMICAS -->
+        <section id="dicas" class="secao-dicas">
+            <div class="sec-header">
+                <h2>Guia Prático de Apoio</h2>
+                <p>Selecione uma categoria abaixo para explorar dicas detalhadas:</p>
             </div>
 
-            <div class="card-dica">
-                <h3>2. Adaptação do Ambiente</h3>
-                <p>Evite tapetes soltos pela casa e instale barras de apoio no banheiro. Uma boa iluminação previne quedas e garante maior independência.</p>
+            <!-- Botões das Abas -->
+            <div class="abas-container">
+                <button class="aba-btn ativa" onclick="abrirAba(event, 'tecnologia')">💻 Inclusão Digital</button>
+                <button class="aba-btn" onclick="abrirAba(event, 'casa')">🏠 Casa Segura</button>
+                <button class="aba-btn" onclick="abrirAba(event, 'emocional')">🧠 Apoio Emocional</button>
             </div>
 
-            <div class="card-dica">
-                <h3>3. Estímulo Social e Físico</h3>
-                <p>Incentive caminhadas leves, leituras e jogos de raciocínio. Manter o idoso ativo preserva a saúde mental e a mobilidade física.</p>
+            <!-- Conteúdos das Abas -->
+            <div id="tecnologia" class="aba-conteudo ativa">
+                <h3>Como incluir o idoso no mundo digital?</h3>
+                <p>A tecnologia pode aproximar famílias e evitar a solidão. Veja como ajudar:</p>
+                <ul>
+                    <li><strong>Ajustes visuais:</strong> Configure o celular deles aumentando o tamanho da fonte e ativando a leitura de tela se necessário.</li>
+                    <li><strong>Passo a passo visual:</strong> Crie guias escritos à mão ou com prints simples ensinando a fazer chamadas de vídeo.</li>
+                    <li><strong>Cuidado com golpes:</strong> Ensine de forma leve a nunca clicar em links desconhecidos ou compartilhar senhas por mensagens.</li>
+                </ul>
+            </div>
+
+            <div id="casa" class="aba-conteudo">
+                <h3>Adaptações para evitar acidentes domésticos</h3>
+                <p>A maioria das quedas ocorre dentro de casa. Mudanças simples salvam vidas:</p>
+                <ul>
+                    <li><strong>Iluminação reforçada:</strong> Instale lâmpadas fortes nos corredores e luzes com sensor de presença perto da cama.</li>
+                    <li><strong>Banheiro seguro:</strong> Barras de apoio na área do chuveiro e tapetes emborrachados antiderrapantes são obrigatórios.</li>
+                    <li><strong>Caminho livre:</strong> Retire tapetes soltos da sala e remova fios ou móveis baixos das rotas de passagem.</li>
+                </ul>
+            </div>
+
+            <div id="emocional" class="aba-conteudo">
+                <h3>A importância da escuta ativa e companhia</h3>
+                <p>Saúde mental é tão importante quanto a física. Estimule a mente e o coração:</p>
+                <ul>
+                    <li><strong>A caixinha de memórias:</strong> Estimule o idoso a contar histórias do passado. Isso reforça a identidade e a memória ativa.</li>
+                    <li><strong>Combata o isolamento:</strong> Telefone ou visite regularmente. Quinze minutos de conversa genuína mudam o dia de alguém.</li>
+                    <li><strong>Sentimento de utilidade:</strong> Peça conselhos e peça ajuda em tarefas simples. Sentir-se útil previne a depressão.</li>
+                </ul>
             </div>
         </section>
 
-        <!-- Seção de Interatividade (Formulário) -->
-        <section class="formulario-contato">
-            <h2>Compartilhe uma Dica</h2>
-            <p>Você conhece outra forma de ajudar? Deixe sua sugestão abaixo:</p>
-            
-            <form id="formDica" onsubmit="enviarFormulario(event)">
-                <div class="grupo-campo">
-                    <label for="nome">Seu Nome:</label>
-                    <input type="text" id="nome" required placeholder="Digite seu nome">
-                </div>
+        <!-- SEÇÃO INTERATIVA: MURAL DA COMUNIDADE -->
+        <section id="comunidade" class="secao-comunidade">
+            <div class="grid-comunidade">
                 
-                <div class="grupo-campo">
-                    <label for="mensagem">Sua Sugestão:</label>
-                    <textarea id="mensagem" rows="4" required placeholder="Como você costuma ajudar os idosos no dia a dia?"></textarea>
+                <!-- Formulário -->
+                <div class="card-formulario">
+                    <h3>Deixe sua sugestão</h3>
+                    <p>Qual atitude ou ideia você pratica para ajudar os idosos à sua volta?</p>
+                    <form id="form-depoimento">
+                        <div class="campo">
+                            <label for="autor">Seu Nome:</label>
+                            <input type="text" id="autor" required placeholder="Ex: Maria Silva">
+                        </div>
+                        <div class="campo">
+                            <label for="texto-dica">Sua Dica ou Relato:</label>
+                            <textarea id="texto-dica" rows="4" required placeholder="Compartilhe sua experiência..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Publicar no Mural</button>
+                    </form>
                 </div>
-                
-                <button type="submit" class="btn-enviar">Enviar Sugestão</button>
-            </form>
+
+                <!-- Espaço do Mural -->
+                <div class="mural-container">
+                    <h3>Mural de Ideias Coletivas</h3>
+                    <div id="mural-mensagens" class="mural-mensagens">
+                        <!-- Gerado via JavaScript -->
+                    </div>
+                </div>
+
+            </div>
         </section>
 
     </main>
 
-    <footer>
-        <p>&copy; 2026 Portal Viver Bem. Criado com foco em acessibilidade e carinho.</p>
+    <!-- RODAPÉ -->
+    <footer class="main-footer">
+        <p>&copy; 2026 Gerações Unidas. Todos os direitos reservados. Feito com amor e foco em acessibilidade.</p>
     </footer>
 
-    <!-- --- SCRIPT JAVASCRIPT --- -->
-    <script>
-        // Função para aumentar ou diminuir a fonte da página
-        function alterarFonte(mudar) {
-            const elementoPrincipal = document.getElementById('conteudo-principal');
-            // Obtém o tamanho atual da fonte estilizada
-            let tamanhoAtual = parseFloat(window.getComputedStyle(elementoPrincipal, null).getPropertyValue('font-size'));
-            
-            // Define limites para que a fonte não fique pequena ou grande demais
-            let novoTamanho = tamanhoAtual + mudar;
-            if (novoTamanho >= 16 && novoTamanho <= 32) {
-                elementoPrincipal.style.fontSize = novoTamanho + 'px';
-            }
-        }
-
-        // Função para processar o formulário
-        function enviarFormulario(event) {
-            event.preventDefault(); // Impede a página de recarregar
-            
-            const nome = document.getElementById('nome').value;
-            const mensagem = document.getElementById('mensagem').value;
-            
-            // Exibe um feedback acessível e amigável ao usuário
-            alert(`Obrigado, ${nome}! Sua sugestão ("${mensagem}") foi enviada com sucesso e ajudará nossa comunidade.`);
-            
-            // Limpa o formulário após o envio
-            document.getElementById('formDica').reset();
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
