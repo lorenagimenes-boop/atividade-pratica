@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Viver Bem - Como Ajudar Idosos</title>
+    <style>
+        /* --- ESTILOS CSS --- */
+        :root {
+            --cor-primaria: #0056b3;
+            --cor-secundaria: #f8f9fa;
+            --cor-texto: #212529;
+            --cor-destaque: #e67e22;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 19px; /* Fonte maior por padrão para facilitar a leitura */
+            line-height: 1.6;
+            color: var(--cor-texto);
+            background-color: var(--cor-secundaria);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--cor-primaria);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+        }
+
+        /* Controles de Acessibilidade */
+        .controles-acessibilidade {
+            background-color: #e9ecef;
+            padding: 10px;
+            text-align: center;
+            border-bottom: 2px solid #dee2e6;
+        }
+
+        .btn-acessibilidade {
+            font-size: 1rem;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            border: 2px solid var(--cor-primaria);
+            background-color: white;
+            color: var(--cor-primaria);
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .btn-acessibilidade:hover {
+            background-color: var(--cor-primaria);
+            color: white;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .secao-dicas {
+            margin-bottom: 40px;
+        }
+
+        .card-dica {
+            background-color: #fdfefe;
+            border-left: 5px solid var(--cor-destaque);
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .card-dica h3 {
+            margin-top: 0;
+            color: var(--cor-primaria);
+        }
+
+        /* Formulário Simples */
+        .formulario-contato {
+            background-color: #f1f3f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .grupo-campo {
+            margin-bottom: 15px;
+        }
+
+        .grupo-campo label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .grupo-campo input, .grupo-campo textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 1.1rem;
+            border: 2px solid #ced4da;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .btn-enviar {
+            background-color: var(--cor-destaque);
+            color: white;
+            padding: 12px 25px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        .btn-enviar:hover {
+            background-color: #d35400;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--cor-primaria);
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho Principal -->
+    <header>
+        <h1>Portal Viver Bem</h1>
+        <p>Aprenda a apoiar e cuidar dos nossos idosos com dignidade e carinho</p>
+    </header>
+
+    <!-- Barra de Acessibilidade -->
+    <div class="controles-acessibilidade">
+        <button class="btn-acessibilidade" onclick="alterarFonte(2)">A+ Aumentar Texto</button>
+        <button class="btn-acessibilidade" onclick="alterarFonte(-2)">A- Diminuir Texto</button>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <main id="conteudo-principal">
+        
+        <section class="secao-dicas">
+            <h2>Dicas Práticas de Como Ajudar</h2>
+            <p>Pequenas ações no dia a dia fazem uma grande diferença na qualidade de vida e na inclusão da terceira idade.</p>
+
+            <div class="card-dica">
+                <h3>1. Inclusão Digital</h3>
+                <p>Ensine o uso de tecnologias e smartphones de forma paciente. Configure letras maiores e use exemplos práticos do cotidiano do idoso.</p>
+            </div>
+
+            <div class="card-dica">
+                <h3>2. Adaptação do Ambiente</h3>
+                <p>Evite tapetes soltos pela casa e instale barras de apoio no banheiro. Uma boa iluminação previne quedas e garante maior independência.</p>
+            </div>
+
+            <div class="card-dica">
+                <h3>3. Estímulo Social e Físico</h3>
+                <p>Incentive caminhadas leves, leituras e jogos de raciocínio. Manter o idoso ativo preserva a saúde mental e a mobilidade física.</p>
+            </div>
+        </section>
+
+        <!-- Seção de Interatividade (Formulário) -->
+        <section class="formulario-contato">
+            <h2>Compartilhe uma Dica</h2>
+            <p>Você conhece outra forma de ajudar? Deixe sua sugestão abaixo:</p>
+            
+            <form id="formDica" onsubmit="enviarFormulario(event)">
+                <div class="grupo-campo">
+                    <label for="nome">Seu Nome:</label>
+                    <input type="text" id="nome" required placeholder="Digite seu nome">
+                </div>
+                
+                <div class="grupo-campo">
+                    <label for="mensagem">Sua Sugestão:</label>
+                    <textarea id="mensagem" rows="4" required placeholder="Como você costuma ajudar os idosos no dia a dia?"></textarea>
+                </div>
+                
+                <button type="submit" class="btn-enviar">Enviar Sugestão</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Portal Viver Bem. Criado com foco em acessibilidade e carinho.</p>
+    </footer>
+
+    <!-- --- SCRIPT JAVASCRIPT --- -->
+    <script>
+        // Função para aumentar ou diminuir a fonte da página
+        function alterarFonte(mudar) {
+            const elementoPrincipal = document.getElementById('conteudo-principal');
+            // Obtém o tamanho atual da fonte estilizada
+            let tamanhoAtual = parseFloat(window.getComputedStyle(elementoPrincipal, null).getPropertyValue('font-size'));
+            
+            // Define limites para que a fonte não fique pequena ou grande demais
+            let novoTamanho = tamanhoAtual + mudar;
+            if (novoTamanho >= 16 && novoTamanho <= 32) {
+                elementoPrincipal.style.fontSize = novoTamanho + 'px';
+            }
+        }
+
+        // Função para processar o formulário
+        function enviarFormulario(event) {
+            event.preventDefault(); // Impede a página de recarregar
+            
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            
+            // Exibe um feedback acessível e amigável ao usuário
+            alert(`Obrigado, ${nome}! Sua sugestão ("${mensagem}") foi enviada com sucesso e ajudará nossa comunidade.`);
+            
+            // Limpa o formulário após o envio
+            document.getElementById('formDica').reset();
+        }
+    </script>
+</body>
+</html>
